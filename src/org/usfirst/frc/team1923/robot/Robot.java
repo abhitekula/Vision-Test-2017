@@ -152,6 +152,8 @@ public class Robot extends IterativeRobot {
             UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
             camera.setResolution(640, 480);
             camera.setFPS(30);
+            //camera.setExposureManual(0);
+            //camera.setExposureAuto();
             CvSource outputStream = CameraServer.getInstance().putVideo("HSL", 640, 480);
             
             visionThread = new VisionThread(camera, new GripPipelineTwo(), pipeline -> {
